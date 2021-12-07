@@ -1,5 +1,5 @@
 const dependencies = {
-    "name": "architecture-visualizer",
+    "cleanName": "architecturevisualizer",
     "language": "typescript",
     "frameworks": {
         "frontEndFrameworks": [

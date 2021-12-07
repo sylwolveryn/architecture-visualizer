@@ -6,10 +6,9 @@ import {
     createGeneratedDirPath,
     createGeneratedJsFilePath, pathToReducer,
     createPathToPackageJson,
-    pathToGeneratedFolder
+    pathToGeneratedFolder, sanitize
 } from "./path-utils.mjs"
 import {mapToGroups} from "./node-dependency-tools.mjs"
-import path from "path"
 
 const args = arg({
     // Types
@@ -36,15 +35,16 @@ const mapToDependencieGroups = (dependencies = {}) => {
 }
 
 async function generateDependencyJsonAsJs({name, dependencyGroups, devDependencyGroups, peerDependencyGroups}) {
-    console.log(`START ${name}/dependencies.js creation`)
+    const cleanName = sanitize(name)
+    console.log(`START ${name} dependency creation under ${cleanName}/dependencies.js`)
     try {
-        await fs.mkdirp(createGeneratedDirPath(name))
+        await fs.mkdirp(createGeneratedDirPath(cleanName))
         const allDependencies = {...dependencyGroups, ...devDependencyGroups, ...peerDependencyGroups}
         const frameworks = detectors.frameWorkDetector(allDependencies)
         const language = detectors.languageDetector(allDependencies)
 
-        const filepath = createGeneratedJsFilePath(name, useDateStamp)
-        const contentToWrite = `const dependencies = ${JSON.stringify({name, language, frameworks, allDependencies, devDependencyGroups, dependencyGroups, peerDependencyGroups}, null, 4)}\nexport default dependencies`
+        const filepath = createGeneratedJsFilePath(cleanName, useDateStamp)
+        const contentToWrite = `const dependencies = ${JSON.stringify({cleanName, language, frameworks, allDependencies, devDependencyGroups, dependencyGroups, peerDependencyGroups}, null, 4)}\nexport default dependencies`
 
         try {
             await fileSystem.promises.unlink(filepath)
@@ -68,10 +68,10 @@ async function generateDependencyReducer() {
     try {
         const filepath = pathToReducer()
         const repositoryNames = fileSystem.readdirSync(pathToGeneratedFolder, { withFileTypes: true }).filter(dirent => dirent.isDirectory()).map(dirent => dirent.name)
-        const exportConstantsToDependenciesJsonFiles = repositoryNames.map(name => `import ${name.replaceAll('-', '')} from './${name}/dependencies'\n`)
+        const exportConstantsToDependenciesJsonFiles = repositoryNames.map(name => `import ${sanitize(name)} from './${sanitize(name)}/dependencies'\n`)
         const contentToWrite = `${exportConstantsToDependenciesJsonFiles.join('')}
 const repositoryNames = {
-${repositoryNames.map(name => name.replaceAll('-', ''))},
+${repositoryNames.map(name => sanitize(name))},
 }
 export default repositoryNames`
         try {
