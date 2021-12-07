@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/architecture-visualizer/static/css/main.2ae47eeb.chunk.css",
-    "main.js": "/architecture-visualizer/static/js/main.e7f412a0.chunk.js",
-    "main.js.map": "/architecture-visualizer/static/js/main.e7f412a0.chunk.js.map",
+    "main.js": "/architecture-visualizer/static/js/main.b5dde853.chunk.js",
+    "main.js.map": "/architecture-visualizer/static/js/main.b5dde853.chunk.js.map",
     "runtime-main.js": "/architecture-visualizer/static/js/runtime-main.aadb7629.js",
     "runtime-main.js.map": "/architecture-visualizer/static/js/runtime-main.aadb7629.js.map",
     "static/js/2.caea63d3.chunk.js": "/architecture-visualizer/static/js/2.caea63d3.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.aadb7629.js",
     "static/js/2.caea63d3.chunk.js",
     "static/css/main.2ae47eeb.chunk.css",
-    "static/js/main.e7f412a0.chunk.js"
+    "static/js/main.b5dde853.chunk.js"
   ]
 }
