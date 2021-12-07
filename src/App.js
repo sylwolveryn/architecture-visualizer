@@ -6,8 +6,7 @@ import ErrorBoundary from "./components/ErrorBoundary"
 import {names} from "./routers/repo-routing"
 
 export default function App() {
-    const initRepoName = (names && names.filter(name => name === 'architecture-visualizer')) ? 'architecture-visualizer' : names[0]
-    const [repo, setRepo] = useState(initRepoName)
+    const [repo, setRepo] = useState(names[0])
     const setRepositoryName = ({target: {value}}) => setRepo(value)
 
     return (
@@ -15,7 +14,7 @@ export default function App() {
             <Router>
                 <div>
                     <Navigation repo={repo} handleRepositoryUpdate={setRepositoryName}></Navigation>
-                    <ArchitectureRouter repo={repo}></ArchitectureRouter>
+                    <ArchitectureRouter />
                 </div>
             </Router>
         </ErrorBoundary>

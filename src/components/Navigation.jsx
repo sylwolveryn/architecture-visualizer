@@ -8,7 +8,7 @@ export default function Navigation({repo, handleRepositoryUpdate}) {
             <Navbar.Group align={Alignment.LEFT}>
                 <Navbar.Heading>Architecture visualizer</Navbar.Heading>
                 <Navbar.Divider />
-                <select id="lang" onChange={handleRepositoryUpdate} value={repo}>
+                <select onChange={handleRepositoryUpdate} value={repo}>
                     {names.map(name => <option key={name} value={name}>{name}</option>)}
                 </select>
                 <Navbar.Divider />
