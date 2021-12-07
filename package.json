@@ -2,7 +2,7 @@
   "name": "architecture-visualizer",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/sylwolveryn/architecture-visualizer/",
+  "homepage": "https://architecture-visualizer.github.com/architecture-visualizer/",
   "dependencies": {
     "@blueprintjs/core": "^3.47.0",
     "@blueprintjs/select": "^3.16.6",

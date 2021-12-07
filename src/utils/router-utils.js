@@ -1,1 +1,1 @@
-export const homeURI = '/mneszt/architecture-visualizer'
+export const homeURI = '/architecture-visualizer'

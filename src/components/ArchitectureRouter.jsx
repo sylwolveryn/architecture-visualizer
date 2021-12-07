@@ -14,21 +14,21 @@ function ArchitectureRouter({repo}) {
     let history = useHistory()
 
     React.useEffect(() => {
-        if (window.location.pathname !== `/mneszt/architecture-visualizer/${repo}/node`) history.push(`/mneszt/architecture-visualizer/${repo}/node`)
+        if (window.location.pathname !== `/architecture-visualizer/${repo}/node`) history.push(`/architecture-visualizer/${repo}/node`)
     }, [repo, history])
 
     return (
         <Switch>
-            <Route path="/mneszt/architecture-visualizer/:repo/tech">
+            <Route path="/architecture-visualizer/:repo/tech">
                 <Tech/>
             </Route>
-            <Route path="/mneszt/architecture-visualizer/:repo/react">
+            <Route path="/architecture-visualizer/:repo/react">
                 <ComponentView/>
             </Route>
-            <Route path="/mneszt/architecture-visualizer/:repo/node">
+            <Route path="/architecture-visualizer/:repo/node">
                 <NodeReportView/>
             </Route>
-            <Route path="/mneszt/architecture-visualizer/">
+            <Route path="/architecture-visualizer/">
                 <Home/>
             </Route>
             <Redirect from="/" to={homeURI}/>
