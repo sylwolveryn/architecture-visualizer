@@ -7,6 +7,7 @@
 - react sensor
 - react view
 - other tools integration for static node check (deadcode, vulnerabilities, etc..)
+- node version view
 
 ### DONE
 - simple view
@@ -20,3 +21,5 @@
 
 ### FIXED
 - repo name not shown for architect vis and nest js -> maybe the sanitize removed them
+- responsive echart still too big sometimes - need some button to change things
+- routing

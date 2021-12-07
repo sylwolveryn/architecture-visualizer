@@ -1,8 +1,9 @@
-import React from "react"
+import React, {useState} from "react"
 import ReactECharts from "echarts-for-react"
+import "../resources/RadialTree.css"
 
 function RadialTreeGraph(props) {
-  const { data } = props
+  const { data, treePosition } = props
 
   const convertDataToTreeSet = (data) => {
     if (Object.keys(data).length === 1) {
@@ -48,40 +49,40 @@ function RadialTreeGraph(props) {
   const treeData = convertDataToTreeSet(data)
 
   return (
-    <ReactECharts
-      style={{ height: "100%", padding: "10px" }}
-      option={{
-        tooltip: {
-          trigger: "item",
-          triggerOn: "mousemove",
-          responsive: true,
-        },
-        series: [
-          {
-            type: "tree",
-
-            data: [treeData],
-
-            top: "-5%",
-            bottom: "-5%",
-            left: "20%",
-            right: "20%",
-            layout: "radial",
-
-            symbol: "diamond",
-
-            symbolSize: 13,
-            initialTreeDepth: 5,
-
-            animationDurationUpdate: 750,
-
-            emphasis: {
-              focus: "descendant",
-            },
+      <ReactECharts
+        style={{ height: "100%", padding: "10px" }}
+        option={{
+          tooltip: {
+            trigger: "item",
+            triggerOn: "mousemove",
+            responsive: true,
           },
-        ],
-      }}
-    />
+          series: [
+            {
+              type: "tree",
+
+              data: [treeData],
+
+              top: treePosition.top,
+              bottom: treePosition.bottom,
+              left: treePosition.left,
+              right: treePosition.right,
+              layout: "radial",
+
+              symbol: "circle",
+
+              symbolSize: 9,
+              initialTreeDepth: 5,
+
+              animationDurationUpdate: 750,
+
+              emphasis: {
+                focus: "descendant",
+              },
+            },
+          ],
+        }}
+      />
   )
 }
 

@@ -12,11 +12,11 @@ export default function Navigation({repo, handleRepositoryUpdate}) {
                     {names.map(name => <option key={name} value={name}>{name}</option>)}
                 </select>
                 <Navbar.Divider />
-                <Link to="/"><Button className="bp3-minimal" icon="home" text="Home" /></Link>
-                <Link to={`/${repo}/tech`}><Button className="bp3-minimal" icon="dashboard" text="Technology Radar" /></Link>
-                <Link to={`/${repo}/node`}><Button className="bp3-minimal" icon="cog" text="Node" /></Link>
-                <Link to={`/${repo}/node-simple`}><Button className="bp3-minimal" icon="cog" text="Node simple" /></Link>
-                <Link to={`/${repo}/react`}><Button className="bp3-minimal" icon="data-lineage" text="react" /></Link>
+                <Link to="/architecture-visualizer"><Button className="bp3-minimal" icon="home" text="Home" /></Link>
+                <Link to={`/architecture-visualizer/${repo}/tech`}><Button className="bp3-minimal" icon="dashboard" text="Technology Radar" /></Link>
+                <Link to={`/architecture-visualizer/${repo}/node`}><Button className="bp3-minimal" icon="cog" text="Node Radial tree" /></Link>
+                <Link to={`/architecture-visualizer/${repo}/node-simple`}><Button className="bp3-minimal" icon="cog" text="Node simple tree" /></Link>
+                <Link to={`/architecture-visualizer/${repo}/react`}><Button className="bp3-minimal" icon="data-lineage" text="React" /></Link>
             </Navbar.Group>
         </Navbar>
     )
