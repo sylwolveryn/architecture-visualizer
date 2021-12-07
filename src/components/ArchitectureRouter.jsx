@@ -9,26 +9,30 @@ import Tech from "./Tech"
 import Home from "./Home"
 import NodeReportView from "../container/NodeReportView"
 import {homeURI} from "../utils/router-utils"
+import NodeSimpleReport from "./NodeSimpleReport";
 
 function ArchitectureRouter({repo}) {
     let history = useHistory()
 
     React.useEffect(() => {
-        if (window.location.pathname !== `/architecture-visualizer/${repo}/node`) history.push(`/architecture-visualizer/${repo}/node`)
+        if (window.location.pathname !== `/${repo}/node`) history.push(`/${repo}/node`)
     }, [repo, history])
 
     return (
         <Switch>
-            <Route path="/architecture-visualizer/:repo/tech">
+            <Route path="/:repo/tech">
                 <Tech/>
             </Route>
-            <Route path="/architecture-visualizer/:repo/react">
+            <Route path="/:repo/react">
                 <ComponentView/>
             </Route>
-            <Route path="/architecture-visualizer/:repo/node">
+            <Route path="/:repo/node">
                 <NodeReportView/>
             </Route>
-            <Route path="/architecture-visualizer/">
+            <Route path="/:repo/node-simple">
+                <NodeSimpleReport/>
+            </Route>
+            <Route path="/">
                 <Home/>
             </Route>
             <Redirect from="/" to={homeURI}/>

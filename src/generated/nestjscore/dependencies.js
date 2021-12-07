@@ -1,5 +1,5 @@
 const dependencies = {
-    "cleanName": "nestjscore",
+    "name": "nestjscore",
     "language": "typescript",
     "frameworks": {
         "frontEndFrameworks": [],

@@ -7,9 +7,6 @@ import {names} from "./routers/repo-routing"
 
 export default function App() {
     const initRepoName = (names && names.filter(name => name === 'architecture-visualizer')) ? 'architecture-visualizer' : names[0]
-    console.log('initRepoName');
-    console.log(initRepoName);
-    console.log('/initRepoName');
     const [repo, setRepo] = useState(initRepoName)
     const setRepositoryName = ({target: {value}}) => setRepo(value)
 

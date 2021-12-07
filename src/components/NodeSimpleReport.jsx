@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from "react"
 import {Card, Elevation} from "@blueprintjs/core"
-import dependencies from "../generated/architecture-visualizer/dependencies"
+import dependencies from "../generated/architecturevisualizer/dependencies"
 import JSONFormatter from "json-formatter-js"
 
 function NodeSimpleReport() {

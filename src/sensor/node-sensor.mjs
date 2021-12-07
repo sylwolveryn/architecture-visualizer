@@ -44,7 +44,7 @@ async function generateDependencyJsonAsJs({name, dependencyGroups, devDependency
         const language = detectors.languageDetector(allDependencies)
 
         const filepath = createGeneratedJsFilePath(cleanName, useDateStamp)
-        const contentToWrite = `const dependencies = ${JSON.stringify({cleanName, language, frameworks, allDependencies, devDependencyGroups, dependencyGroups, peerDependencyGroups}, null, 4)}\nexport default dependencies`
+        const contentToWrite = `const dependencies = ${JSON.stringify({name: cleanName, language, frameworks, allDependencies, devDependencyGroups, dependencyGroups, peerDependencyGroups}, null, 4)}\nexport default dependencies`
 
         try {
             await fileSystem.promises.unlink(filepath)
