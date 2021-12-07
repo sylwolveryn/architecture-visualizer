@@ -2,14 +2,15 @@
 
 
 ### TODO
+- selected repo should be a global state / store - which will be used in every component 
 - tech radar
-- simple view
 - react sensor
 - react view
 - other tools integration for static node check (deadcode, vulnerabilities, etc..)
 
 ### DONE
-
+- simple view
+- responsive echart
 
 ## BUGS
 - version is still looks strange, should fix that. Maybe add version or V or v when its only ^~x.y.z (x, y, z are numbers)?

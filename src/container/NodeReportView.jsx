@@ -5,6 +5,8 @@ import dependencyReducer from "../generated/repositories-dependency-reducer"
 import {getCleanedDependencies} from "../utils/dependency-utils"
 import {useParams} from "react-router"
 import ErrorView from "../components/Error"
+import { useWindowResize } from 'beautiful-react-hooks';
+
 
 const Views = {
     FRAMEWORKS: "FRAMEWORKS",
@@ -14,11 +16,19 @@ const Views = {
 }
 
 function NodeReportView() {
+    const [height, setHeight] = useState(window.innerHeight);
+    const onWindowResize = useWindowResize();
+
+    onWindowResize(() => {
+        setHeight(window.innerHeight);
+    });
+
     const [view, setView] = useState(Views.FRAMEWORKS)
     const {repo} = useParams()
     const repositoryName = repo.replaceAll('-', '')
     const dependencies = dependencyReducer[repositoryName]
     const cleanedDependencies = getCleanedDependencies(dependencies)
+
     return (
         <div>
             <ButtonGroup>
@@ -71,7 +81,7 @@ function NodeReportView() {
             <Card
                 interactive={false}
                 elevation={Elevation.FOUR}
-                style={{height: "100vw", margin: "0px auto", maxWidth: "95%"}}
+                style={{margin: "0px auto", maxWidth: "95%", height: `${height-240}px`}}
             >
                 {view === Views.FRAMEWORKS && cleanedDependencies.frameworks ? (
                     <RadialTreeGraph

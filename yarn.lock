@@ -2882,6 +2882,14 @@ batch@0.6.1:
   resolved "https://artylab.expedia.biz/api/npm/public-npm-virtual/batch/-/batch-0.6.1.tgz#dc34314f4e679318093fc760272525f94bf25c16"
   integrity sha1-3DQxT05nkxgJP8dgJyUl+UvyXBY=
 
+beautiful-react-hooks@^1.0.2:
+  version "1.0.2"
+  resolved "https://artylab.expedia.biz/api/npm/public-npm-virtual/beautiful-react-hooks/-/beautiful-react-hooks-1.0.2.tgz#d21c126676359cf44ddd61799c8800ee60b6e442"
+  integrity sha1-0hwSZnY1nPRN3WF5nIgA7mC25EI=
+  dependencies:
+    lodash.debounce "^4.0.8"
+    lodash.throttle "^4.1.1"
+
 bfj@^7.0.2:
   version "7.0.2"
   resolved "https://artylab.expedia.biz/api/npm/public-npm-virtual/bfj/-/bfj-7.0.2.tgz#1988ce76f3add9ac2913fd8ba47aad9e651bfbb2"
@@ -7227,6 +7235,11 @@ lodash.templatesettings@^4.0.0:
   integrity sha1-5IExDwSdPPbUfpEq0JMTsVTw+zM=
   dependencies:
     lodash._reinterpolate "^3.0.0"
+
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://artylab.expedia.biz/api/npm/public-npm-virtual/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+  integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
 
 lodash.truncate@^4.4.2:
   version "4.4.2"

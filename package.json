@@ -10,6 +10,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "arg": "^5.0.0",
+    "beautiful-react-hooks": "^1.0.2",
     "echarts": "5.1.2",
     "echarts-for-react": "^3.0.1",
     "esm": "^3.2.25",
